@@ -1,0 +1,14 @@
+.space-container {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #0f172a 0%, #020617 70%);
+  overflow: hidden;
+  z-index: -10;
+  pointer-events: none;
+}
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}

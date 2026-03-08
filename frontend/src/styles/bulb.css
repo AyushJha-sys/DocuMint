@@ -1,0 +1,71 @@
+/* Bulb Toggle Container */
+.bulb-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100px;
+  height: 250px;
+}
+
+/* The Wire/String */
+.bulb-wire {
+  width: 2px;
+  height: 100px;
+  background: #333;
+  position: relative;
+  z-index: 10;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dark .bulb-wire {
+  background: #666;
+}
+
+/* The Bulb */
+.bulb {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 20;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: -5px;
+}
+
+/* Light Mode (Bulb is ON) */
+.bulb.on {
+  background: #fcd34d; /* Yellow */
+  box-shadow: 0 0 50px #fcd34d, 0 0 100px rgba(252, 211, 77, 0.5), inset 0 0 20px #fff;
+}
+
+/* Dark Mode (Bulb is OFF) */
+.bulb.off {
+  background: rgba(255, 255, 255, 0.1); 
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Bulb Base/Socket */
+.bulb-base {
+  width: 30px;
+  height: 20px;
+  background: #4b5563; /* Gray */
+  border-radius: 4px;
+  margin-top: -10px;
+  position: relative;
+  z-index: 30;
+}
+
+/* Pull Animation Class */
+.bulb-pull {
+  animation: pullString 0.4s ease;
+}
+
+@keyframes pullString {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}
