@@ -32,7 +32,7 @@ app.use(
     origin: (origin, callback) => {
       // Allow requests with no origin (like mobile apps or curl requests)
       if (!origin) return callback(null, true);
-      
+
       if (allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
@@ -54,6 +54,12 @@ app.use(express.urlencoded({ extended: true }));
 /* ================= STATIC FILES ================= */
 
 app.use("/uploads", express.static("uploads"));
+
+/* ================= HEALTH CHECK ================= */
+
+app.get("/", (req, res) => {
+  res.send("DocuMint API running");
+});
 
 /* ================= ROUTES ================= */
 
