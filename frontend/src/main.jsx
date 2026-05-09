@@ -5,7 +5,7 @@ import App from "./App";
 import "./index.css";
 import { EditorProvider } from "./context/EditorContext";
 import { UserProvider } from "./context/UserContext";
-
+// Improved structure
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <UserProvider>
