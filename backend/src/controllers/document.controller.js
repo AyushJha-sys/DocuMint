@@ -40,7 +40,7 @@ export const downloadDocument = asyncHandler(async (req, res) => {
     throw new Error("Not enough credits to download this document");
   }
 
-  // Deduct credits
+  // Method for Credits deduction
   user.credits -= 10;
   await user.save();
 
